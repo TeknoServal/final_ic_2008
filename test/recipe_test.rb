@@ -2,8 +2,8 @@ require './test/test_helper'
 
 class RecipeTest < Minitest::Test
   def setup
-    @ingredient1 = Ingredient.new({ name: 'Cheese', unit: 'oz', calories: 50 })
-    @ingredient2 = Ingredient.new({ name: 'Macaroni', unit: 'oz', calories: 200 })
+    @ingredient1 = Ingredient.new({ name: 'Cheese', unit: 'oz', calories: 100 })
+    @ingredient2 = Ingredient.new({ name: 'Macaroni', unit: 'oz', calories: 30 })
     @ingredient3 = Ingredient.new({ name: 'Ground Beef', unit: 'oz', calories: 100 })
     @ingredient4 = Ingredient.new({ name: 'Bun', unit: 'g', calories: 75 })
 
@@ -43,7 +43,6 @@ class RecipeTest < Minitest::Test
 
   def test_total_calories
     @recipe1.add_ingredient(@ingredient1, 2)
-    @recipe1.add_ingredient(@ingredient1, 4)
     @recipe1.add_ingredient(@ingredient2, 8)
 
     assert_equal 440, @recipe1.total_calories
