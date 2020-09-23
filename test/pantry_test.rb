@@ -27,4 +27,21 @@ class PantryTest < Minitest::Test
 
     assert_equal 7, pantry.stock_check(ingredient2)
   end
+
+  def test_enough_ingredients_for?
+    pantry = Pantry.new
+
+    pantry.restock(ingredient1, 5)
+    pantry.restock(ingredient1, 10)
+
+    assert_equal false, pantry.enough_ingredients_for?(recipe1)
+
+    pantry.restock(ingredient2, 7)
+
+    assert_equal false, pantry.enough_ingredients_for?(recipe1)
+
+    pantry.restock(ingredient2, 1)
+
+    assert pantry.enough_ingredients_for?(recipe1)
+  end
 end
