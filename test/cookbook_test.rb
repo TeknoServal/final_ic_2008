@@ -6,6 +6,6 @@ class CookbookTest < Minitest::Test
 
     assert_instance_of CookBook, cookbook
 
-    assert_equal [] cookbook.recipes
+    assert_equal [], cookbook.recipes
   end
 end
