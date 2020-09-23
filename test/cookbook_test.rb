@@ -13,7 +13,7 @@ class CookbookTest < Minitest::Test
     cookbook = CookBook.new
 
     recipe1 = Recipe.new('Mac and Cheese')
-    recipe1 = Recipe.new('Cheese Burger')
+    recipe2 = Recipe.new('Cheese Burger')
 
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
