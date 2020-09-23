@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
+require 'date'
+
 # CookBook class
 class CookBook
-  attr_reader :recipes
+  attr_reader :recipes, :date
 
   def initialize
     @recipes = []
+    @date = DateTime.now.strftime('%m-%d-%Y')
   end
 
   def add_recipe(recipe)
